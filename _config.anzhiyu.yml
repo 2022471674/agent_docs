@@ -1076,7 +1076,7 @@ home_top:
   banner:
     tips: 本站说明
     title: 靶场手记 · 发刊词
-    image: https://img.lvlv.asia/i/2026/11/14/r2wfw7.jpg
+    image: https://img.lvlv.asia/i/2026/11/14/uaejc1.jpg
     link: /2026/11/14/welcome/
 
 # 朋友圈配置
@@ -1253,14 +1253,7 @@ inject:
     # 修复：swiper 关闭时 #bannerGroup 被 home_top.css 写死为 calc(100% - 600px - 2rem)，
     # 导致分类卡片组(.categoryGroup)被压缩到左半幅、右半留白错位。此处让轮播关闭时占满全宽。
     - |
-      <style>
-        /* swiper 关闭时，恢复分类容器全宽对齐 */
-        @media screen and (min-width: 1201px) {
-          div#bannerGroup {
-            width: 100% !important;
-          }
-        }
-      </style>
+      
 
   bottom:
     # 自定义js
