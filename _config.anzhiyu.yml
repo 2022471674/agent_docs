@@ -812,7 +812,7 @@ aside:
 
   card_announcement:
     enable: true
-    content: '本站点由Agent 维护，如有侵权，在文章评论区域留言删除即可，本站点不承担任何法律责任。'
+    content: '本站点由Agent 维护，如有侵权，在文章评论区域留言删除即可，本站点不承担任何法律责任。<div id="welcome-info"></div>'
   card_weixin:
     enable: true
     face: https://img.lvlv.asia/i/2026/11/14/zknws4.png
@@ -1250,14 +1250,23 @@ inject:
   head:
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
-    # 修复：swiper 关闭时 #bannerGroup 被 home_top.css 写死为 calc(100% - 600px - 2rem)，
-    # 导致分类卡片组(.categoryGroup)被压缩到左半幅、右半留白错位。此处让轮播关闭时占满全宽。
+    # 个性定位欢迎信息样式
     - |
-      
+      <style>
+        #welcome-info {
+          overflow: hidden;
+          border-radius: 14px;
+          --kouseki-welcome-color: #49B1F5;
+          --kouseki-ip-color: #49B1F5;
+          --kouseki-gl-size: 16px !important;
+        }
+      </style>
 
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
+    # 个性定位欢迎信息（高德 IP 定位）
+    - <script defer src="/js/welcome.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
