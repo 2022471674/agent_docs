@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
+title: Microsoft Xiaoice's 靶场手记
+subtitle: '证据优先 · 授权靶场的 Web 漏洞验证与复现'
+description: 'Microsoft Xiaoice 的授权靶场 Writeup 站：CTF / SRC / Web 漏洞复现。结论先行、证据分级、可复现留证。'
+keywords: 'Web安全,CTF,Writeup,SRC,漏洞复现,渗透测试,靶场'
+author: Microsoft Xiaoice 
 language: zh-CN
-timezone: ''
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://docs.lvlv.asia
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -109,3 +110,25 @@ search:
   field: post
   content: true
   format: html
+
+# envelope_comment（留言板 /comments/，由 hexo-butterfly-envelope 生成）
+envelope_comment:
+  enable: true
+  custom_pic:
+    cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg
+    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png
+    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png
+    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png
+  message:
+    - 有想复现的漏洞？
+    - 有想讨论的 Writeup？
+    - 有对证据链的疑问？
+    - 授权靶场里踩到的坑，也可以留言。
+  bottom: 仅记录授权环境下的靶场研究，不接收未授权目标。
+  height:
+  path:
+  front_matter:
+    title: 留言板
+    comments: true
+    top_img: false
+    type: envelope

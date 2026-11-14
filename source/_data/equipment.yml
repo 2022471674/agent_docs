@@ -1,0 +1,65 @@
+# 靶场手记 · 装备页数据
+# 主题：安全研究工具链 / 靶场环境；仅用于授权环境下的靶场研究。
+# 三层结构遵循 AnZhiYu 4.3：class_name → good_things → equipment_list。
+- class_name: 安全研究工具链
+  description: 授权 SRC 众测与 Web 渗透测试中使用的工具链
+  tip: 先定边界，再谈利用；每个判断都附可复现留证
+  top_background: "https://bu.dusays.com/2023/07/05/64a4c38842b7a.webp"
+  good_things:
+    - title: 侦察
+      description: 资产测绘、端口与服务识别、子域枚举
+      equipment_list:
+        - name: Nmap
+          specification: 开源 / 端口扫描与服务指纹
+          description: "用于授权范围内的主机发现、端口枚举与版本探测，结果作为证据分级中 Confirmed 的输入。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c3b191e2e.png"
+          link: "https://nmap.org/"
+        - name: Amass
+          specification: OWASP / 攻击面测绘
+          description: "用于被动子域与资产关联梳理，限定在授权域名清单内，输出纳入边界确认记录。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c40ab698a.webp"
+          link: "https://github.com/owasp-amass/amass"
+    - title: 漏洞验证
+      description: 请求代理、漏洞验证与证据链串联
+      equipment_list:
+        - name: Burp Suite
+          specification: Community / Pro - 代理与重放
+          description: "拦截与重放 HTTP 请求，复现注入、越权与逻辑缺陷，保存请求响应对作为可复现留证。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c3b191e2e.png"
+          link: "https://portswigger.net/burp"
+        - name: CTF2 MCP 工具链
+          specification: MCP / 靶场编排接口
+          description: "把靶场任务、工具调用与证据归档串成可复跑流程，便于 Writeup 中复现步骤逐步重放。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c40ab698a.webp"
+          link: "https://docs.lvlv.asia"
+- class_name: 靶场环境
+  description: 用于漏洞复现、逆向分析与隔离验证的运行时环境
+  tip: 隔离运行，快照可回滚，出网与边界均可审计
+  top_background: "https://bu.dusays.com/2023/07/05/64a4c38842b7a.webp"
+  good_things:
+    - title: 逆向分析
+      description: 二进制反汇编、反编译与脚本化验证
+      equipment_list:
+        - name: Ghidra
+          specification: NSA 开源 / 反编译套件
+          description: "对授权样本做静态反汇编与反编译，定位危险调用与数据流，结论标注到证据编号。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c3b191e2e.png"
+          link: "https://ghidra-sre.org/"
+        - name: Python
+          specification: 3.x / PoC 与解析脚本
+          description: "编写最小可复现 PoC 与日志解析脚本，验证仅在隔离靶场执行，避免对授权外目标生效。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c40ab698a.webp"
+          link: "https://www.python.org/"
+    - title: 靶场运行时
+      description: 隔离靶场、容器与发行版底座
+      equipment_list:
+        - name: Kali Linux
+          specification: 滚动发行版 / 渗透测试工具集
+          description: "作为授权靶场的统一工具底座，集中管理扫描器与代理，环境改动记录在复现步骤里。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c3b191e2e.png"
+          link: "https://www.kali.org/"
+        - name: Docker 靶场容器
+          specification: 容器 / 一次性漏洞环境
+          description: "用一次性容器复现漏洞，验证结束后销毁回滚，保证证据可重放且不污染宿主。"
+          image: "https://bu.dusays.com/2023/07/05/64a4c40ab698a.webp"
+          link: "https://www.docker.com/"
