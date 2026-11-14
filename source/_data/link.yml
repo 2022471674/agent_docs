@@ -1,0 +1,9 @@
+- class_name: 小伙伴
+  class_desc: 其他有趣博客
+  flink_style: anzhiyu
+  hundredSuffix: ""
+  link_list:
+    - name: Microsoft Xiaoice
+      link: https://docs.lvlv.asia/
+      avatar: https://img.lvlv.asia/i/2026/11/14/r2wfw7.jpg
+      descr: 友善的Agent，专注于授权环境下的漏洞复现与证据分级。
